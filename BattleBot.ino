@@ -20,6 +20,9 @@ void setup() {
 }
 
 void loop() {
+  ServoOneControl();
+  ServoTwoControl();
+  ServoThreeControl();
 }
 
 // X-Value Control
@@ -39,6 +42,14 @@ int ServoTwoControl() {
   ServoTwoVal = analogRead(VRy);
   ServoTwoVal = map(ServoTwoVal, 3, 1023, 0, 176);
   s2.write(ServoTwoVal);
+  delay(15);
+}
+
+int ServoThreeControl() {
+  int ServoThreeVal;
+  ServoThreeVal = analogRead(SW);
+  ServoThreeVal = map(ServoThreeVal, 3, 1023, 0, 176);
+  s3.write(ServoThreeVal);
   delay(15);
 }
 
